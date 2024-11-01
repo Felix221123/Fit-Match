@@ -1,0 +1,117 @@
+[
+{
+    "id": 1,
+    "name": "Blue Ink Slim Fit Motion Flex Jeans",
+    "category": "Jeans",
+    "colour": "Blue",
+    "pattern": "Solid ",
+    "gender": "male",
+    "size": ["S", "R", "L", "XL"],
+    "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/B70221s.jpg?im=Resize,width=750",
+    "item_link": "https://www.next.co.uk/style/st965403/b70221#b70221"
+},
+
+{
+    "id":2,
+    "name": "Levi's® Black 501® Original Jeans",
+    "category": "Jeans",
+    "colour": "Black",
+    "pattern": "Solid",
+    "gender": "male",
+    "size": ["S", "R", "L"],
+    "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/854678s.jpg?im=Resize,width=90",
+    "item_link": "https://www.next.co.uk/style/st080205/854678#854678"  
+},
+
+{
+    "id":3,
+    "name": "Grey Charcoal Straight Fit Classic Stretch Jeans",
+    "category": "Jeans",
+    "colour": "Grey",
+    "pattern": "Solid",
+    "gender": "male",
+    "size": ["S", "R", "L", "XL"],
+    "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/C24103s.jpg?im=Resize,width=750",
+    "item_link": "https://www.next.co.uk/style/st536590/c24103#c24103"
+},
+
+{
+    "id":4,
+    "name": "Blue Mid Straight Fit Vintage Stretch Authentic Jeans",
+    "category": "Jeans",
+    "colour": "Blue",
+    "pattern": "Solid",
+    "gender": "male",
+    "size": ["S", "R", "L"],
+    "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/B55672s.jpg",
+    "item_link": "https://www.next.co.uk/style/st924502/b55672#b55672" 
+},
+{
+    "id":5,
+    "name": "Blue Relaxed Fit Classic Stretch Jeans",
+    "category": "Jeans",
+    "colour": "Blue",
+    "pattern": "Solid",
+    "gender": "male",
+    "size": ["S", "R", "L"],
+    "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/B26717s2.jpg",
+    "item_link": "https://www.next.co.uk/style/su311178/b26717#b26717"
+},
+{
+    "id":6,
+    "name": "White Slim Fit Essential Regular Crew Neck 100% Cotton T-Shirt",
+    "category": "T-Shirts",
+    "colour": "White",
+    "pattern": "Solid",
+    "gender": "male",
+    "fit": ["Regular fit", "Slim fit", "Relaxed fit"],
+    "size": ["S", "M", "L"],
+    "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/157063s.jpg",
+    "item_link": "https://www.next.co.uk/style/st056123/157063"
+},
+{
+    "id":7,
+    "name": "Black Relaxed Fit 100% Cotton Japanese Back Print Graphic T-Shirt",
+    "category":"T-Shirts",
+    "colour": "Black",
+    "pattern": "Solid",
+    "gender": "male",
+    "size": ["S", "M", "L"],
+    "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/Q77643s.jpg",
+    "item_link": "https://www.next.co.uk/style/su156011/q77643"
+},
+{
+    "id":8,
+    "name": "Navy Blue Slim Fit Essential V-Neck 100% Cotton T-Shirt",
+    "category": "T-Shirts",
+    "colour": "Navy Blue",
+    "pattern": "Solid",
+    "gender": "male",
+    "size": ["S", "M", "L"],
+    "fit": ["Slim fit", "Regular fit"],
+    "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/887743s.jpg",
+    "item_link": "https://www.next.co.uk/style/st490458/887743"
+},
+{
+    "id":9,
+    "name":"Nike Black Club 100% Cotton T-Shirt",
+    "category": "T-Shirts",
+    "colour": "Black",
+    "pattern": "Solid",
+    "gender": "male",
+    "size": ["S", "M", "L"],
+    "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/336607s.jpg",
+    "item_link": "https://www.next.co.uk/style/st417206/336607#336607"
+},
+{
+    "id":10,
+    "name": "White Relaxed Fit Urban Graphic Front Print T-Shirt",
+    "category": "T-Shirts",
+    "colour": "White",
+    "pattern": "Solid",
+    "gender": "male",
+    "size": ["S", "M", "L"],
+    "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/N55851s.jpg",
+    "item_link": "https://www.next.co.uk/style/su020325/n55851#n55851"
+}
+]
