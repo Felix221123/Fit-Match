@@ -1,8 +1,176 @@
 @import "base";
 
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Raleway:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* Define font variables */
+$manrope: 'Manrope', sans-serif;
+$raleway: 'Raleway', sans-serif;
+$spaceMono: 'Space Mono', monospace;
+
+/* Accent Colors */
+$accent-blue: #007AFF;
+$accent-orange: #FF9500;
+$accent-pink: #FF2D55;
+$accent-purple: #5856D6;
+$accent-teal-blue: #5AC8FA;
+$accent-yellow: #FFCC00;
+
+/* Basic Colors */
+$basic-adding: #4CD964;
+$basic-destructive: #FF3B30;
+$basic-dark: #000000;
+$basic-light: #FFFFFF;
+
+/* Mixin definitions */
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin flexComp($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin fontSize($size) {
+  font-size: clamp($size - 0.25rem, $size, $size + 0.25rem);
+}
+
+@mixin Transbtnhovers() {
+  transition: 0.5s;
+}
+
+@mixin hoverActiveBtn($bgclr, $clr) {
+  &:hover,
+  &:active {
+    background-color: $bgclr;
+    color: $clr;
+  }
+}
+
+@mixin hiddenElement() {
+  @media (max-width: 1439px) {
+    display: none;
+  }
+}
+
+@mixin SizeofOriginalContentsForDevicesMorethan1440px() {
+  @media (min-width: 1440px) {
+    width: 90rem;
+    margin-inline: auto;
+  }
+}
+
+/* Global styles */
+body {
+  font-family: $manrope;
+  background-color: lightcyan;
+  color: $basic-dark;
+  padding-left: 5%;  
+}
+
+.container {
+  @include flex(column);
+  @include SizeofOriginalContentsForDevicesMorethan1440px();
+  padding: 20px;
+}
+
+/* Header styles */
+header {
+    font-family: $raleway; 
+    font-size: 2rem; 
+    color: $accent-blue; 
+    margin-bottom: 10px; 
+    width: 100%;
+    text-align: center; 
+    background: linear-gradient(90deg, $accent-blue, $accent-pink, $accent-yellow, $accent-purple);
+    -webkit-background-clip: text; 
+    color: transparent;
+
+}
+
+.description {
+  font-family: $spaceMono;
+  font-size: 1.25rem;
+  color: $basic-dark;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* Image Upload component styles */
+.imageUpload {
+  @include flexComp(column);
+  background-color: $basic-light;
+  padding: 20px;
+  border: 1px solid $basic-dark;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+  padding: 10px; 
+  border: 1px solid $basic-dark; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  @include Transbtnhovers(); 
+  &:hover { 
+    background-color: $accent-teal-blue; 
+    color: $basic-light;
+ }
+}
+
+button { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: $accent-orange; 
+    color: $basic-light; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    @include Transbtnhovers(); 
+    @include hoverActiveBtn($accent-pink, $basic-light); 
+}
 
 
 
+/* Analysis Results styles */
+.analysisResult {
+  @include flexComp(column);
+  background-color: $accent-yellow;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
 
+/* Uploaded Image styles */ 
+.uploadedImage { 
+    margin-top: 20px; 
+    border: 1px solid $basic-dark; padding: 10px; 
+    border-radius: 10px;
+    padding: 10px;
+}
+/* Text Banner Container */ .text-banner-container { 
+    position: absolute; 
+    right: 0; top: 50%; 
+    transform: translateY(-50%); display: flex;
+    flex-direction: column; 
+    align-items: flex-end; /* Aligns text to the right */ 
+    padding-right: 5%;
+}
+/* Text Banner styles */ .text-banner { 
+    font-family: $raleway; 
+    font-size: 3rem; color: $accent-pink; 
+    text-transform: uppercase; 
+    letter-spacing: 0.1rem; 
+    background: linear-gradient(90deg, $accent-blue, $accent-pink, $accent-yellow, $accent-purple); 
+    -webkit-background-clip: text; 
+    color: transparent; 
+    white-space: nowrap; /* Prevent text from wrapping */ 
+    margin-bottom: 20px; /* Space between repeated texts */ 
+}
 
 

@@ -5,7 +5,7 @@ import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
 import { AdvancedImage } from '@cloudinary/react';
 import { CloudinaryImage } from '@cloudinary/url-gen/assets/CloudinaryImage';
 import ClarifaiAnalysis from './ImageAnalysis';
-
+import "../Styles/styles.css"
 
 const cld = new Cloudinary({
   cloud: { cloudName: 'drjjavzx5' }

@@ -1,1 +1,135 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");/*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Raleway:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
+/* Define font variables */
+/* Accent Colors */
+/* Basic Colors */
+/* Mixin definitions */
+/* Global styles */
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: lightcyan;
+  color: #000000;
+  padding-left: 5%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+@media (min-width: 1440px) {
+  .container {
+    width: 90rem;
+    margin-inline: auto;
+  }
+}
+
+/* Header styles */
+header {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  color: #007AFF;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(90deg, #007AFF, #FF2D55, #FFCC00, #5856D6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.description {
+  font-family: "Space Mono", monospace;
+  font-size: 1.25rem;
+  color: #000000;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* Image Upload component styles */
+.imageUpload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border: 1px solid #000000;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+input[type=file] {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+input[type=file]:hover {
+  background-color: #5AC8FA;
+  color: #FFFFFF;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FF9500;
+  color: #FFFFFF;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+button:hover, button:active {
+  background-color: #FF2D55;
+  color: #FFFFFF;
+}
+
+/* Analysis Results styles */
+.analysisResult {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFCC00;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* Uploaded Image styles */
+.uploadedImage {
+  margin-top: 20px;
+  border: 1px solid #000000;
+  padding: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Text Banner Container */
+.text-banner-container {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Aligns text to the right */
+  padding-right: 5%;
+}
+
+/* Text Banner styles */
+.text-banner {
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+  color: #FF2D55;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  background: linear-gradient(90deg, #007AFF, #FF2D55, #FFCC00, #5856D6);
+  -webkit-background-clip: text;
+  color: transparent;
+  white-space: nowrap; /* Prevent text from wrapping */
+  margin-bottom: 20px; /* Space between repeated texts */
+}/*# sourceMappingURL=styles.css.map */

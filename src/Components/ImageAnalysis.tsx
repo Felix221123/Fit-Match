@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { OpenAI } from 'openai';
+import "../Styles/styles.css"
 
 interface ImageAnalyzerProps {
   imageUrl: string;
