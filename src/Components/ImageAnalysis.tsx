@@ -1,9 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { OpenAI } from 'openai';
 import "../Styles/styles.css"
+import ClothingData from '../data.json';
 
 interface ImageAnalyzerProps {
   imageUrl: string;
+}
+
+interface ClothingItem {
+  id: number;
+  name: string;
+  category: string;
+  colour: string; // Using "colour" as per JSON data
+  pattern: string;
+  gender: string;
+  size: (string | number)[]; // Adjusting to handle both strings and numbers
+  image_url: string;
+  item_link?: string;
 }
 
 interface ClothingAttributes {
@@ -14,7 +27,7 @@ interface ClothingAttributes {
   event?: string;
   outfitStyle?: string;
   gender?: string;
-  size?: string;
+  size?: string | number;
 }
 
 const openai = new OpenAI({
@@ -22,16 +35,73 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
+
+
 const ImageAnalyzer: React.FC<ImageAnalyzerProps> = ({ imageUrl }) => {
   const [attributes, setAttributes] = useState<ClothingAttributes | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
+  const [status, setStatus] = useState<string>('');
+  const [similarItems, setSimilarItems] = useState<ClothingItem[]>([]);
 
   // State for user answers to additional questions
   const [event, setEvent] = useState<string>('');
   const [outfitStyle, setOutfitStyle] = useState<string>('');
   const [gender, setGender] = useState<string>('');
-  const [size, setSize] = useState<string>('');
+  const [size, setSize] = useState<string | number>('');
+
+  const findSimilarItems = (attributes: ClothingAttributes | null) => {
+    if (!attributes) {
+      console.error('No attributes provided');
+      return;
+    }
+
+    // Helper function to perform keyword-based matching
+    const keywordMatch = (itemValue: string, attrValue: string) => {
+      const itemWords = itemValue.toLowerCase().split(" ");
+      const attrWords = attrValue.toLowerCase().split(" ");
+      return attrWords.some(word => itemWords.includes(word));
+    };
+
+    const recommendedItems = ClothingData.filter((item) => {
+      const categoryMatch = attributes.category
+        ? keywordMatch(item.category, attributes.category)
+        : false;
+
+      const colorMatch = attributes.color
+        ? keywordMatch(item.colour, attributes.color)
+        : false;
+
+      const patternMatch = attributes.pattern
+        ? keywordMatch(item.pattern, attributes.pattern)
+        : false;
+
+      const genderMatch = attributes.gender
+        ? item.gender.toLowerCase() === attributes.gender.toLowerCase()
+        : false;
+
+      // Logic for cross-category recommendations
+      const crossCategoryRecommendation = attributes.category && (
+        (attributes.category.toLowerCase() === "shorts" && item.category.toLowerCase() === "shirts") ||
+        (attributes.category.toLowerCase() === "t-shirts" && item.category.toLowerCase() === "jackets") ||
+        (attributes.category.toLowerCase() === "hoodies" && item.category.toLowerCase() === "trousers")
+      );
+
+      // Combine the matching logic
+      return categoryMatch || colorMatch || patternMatch || genderMatch || crossCategoryRecommendation;
+    });
+
+    setSimilarItems(recommendedItems);
+    setStatus(`Found ${recommendedItems.length} similar items.`);
+  };
+
+
+  // Use useEffect to trigger findSimilarItems whenever attributes changes
+  useEffect(() => {
+    if (attributes) {
+      findSimilarItems(attributes);
+    }
+  }, [attributes]);
 
   const analyzeImage = async () => {
     if (!event || !outfitStyle || !gender || !size) {
@@ -42,6 +112,7 @@ const ImageAnalyzer: React.FC<ImageAnalyzerProps> = ({ imageUrl }) => {
     setLoading(true);
     setError('');
     setAttributes(null);
+    setStatus('Analyzing image and generating attributes...');
 
     try {
       const prompt = `
@@ -61,20 +132,13 @@ const ImageAnalyzer: React.FC<ImageAnalyzerProps> = ({ imageUrl }) => {
         max_tokens: 300,
       });
 
-      console.log("Full OpenAI Response: ", response);
-
-      // Extract the JSON response
       const gptResponse = response.choices[0]?.message?.content?.trim();
-
-      // Parse the JSON
       if (gptResponse) {
         const jsonText = gptResponse.replace(/```json|```/g, '').trim();
-        console.log('jsonText', jsonText);
-
         try {
           const parsedResponse = JSON.parse(jsonText);
 
-          // Combine user inputs with image attributes
+          // Combine user inputs with image attributes and update state
           setAttributes({
             category: parsedResponse.category,
             color: parsedResponse.color,
@@ -86,9 +150,7 @@ const ImageAnalyzer: React.FC<ImageAnalyzerProps> = ({ imageUrl }) => {
             size,
           });
 
-          console.log('parsedResponse ', attributes);
-
-          
+          console.log('Attributes:', attributes);
         } catch (parseError) {
           console.error("Failed to parse JSON:", parseError);
           setError("Failed to parse the response. Please ensure the API returns a valid JSON.");
@@ -172,6 +234,26 @@ const ImageAnalyzer: React.FC<ImageAnalyzerProps> = ({ imageUrl }) => {
           <p><strong>Usual Outfit Style:</strong> {attributes.outfitStyle}</p>
           <p><strong>Gender:</strong> {attributes.gender}</p>
           <p><strong>Size:</strong> {attributes.size}</p>
+        </div>
+      )}
+
+
+      {status && <p>Status: {status}</p>}
+
+      {similarItems.length > 0 && (
+        <div>
+          <h4>Recommended Items to try out or similar items:</h4>
+          <ul>
+            {similarItems.map((item, index) => (
+              <li key={index}>
+                <img src={item.image_url} alt={item.name} style={{ width: "100px", height: "auto" }} />
+                <p><strong>Name:</strong> {item.name}</p>
+                <p><strong>Category:</strong> {item.category}</p>
+                <a href={item.item_link} target="_blank">go to link</a>
+                {/* Other details */}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

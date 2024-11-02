@@ -20,7 +20,7 @@
     "gender": "male",
     "size": ["S", "R", "L"],
     "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/854678s.jpg?im=Resize,width=90",
-    "item_link": "https://www.next.co.uk/style/st080205/854678#854678"  
+    "item_link": "https://www.next.co.uk/style/st080205/854678#854678"
 },
 
 {
@@ -44,7 +44,7 @@
     "gender": "male",
     "size": ["S", "R", "L"],
     "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/B55672s.jpg",
-    "item_link": "https://www.next.co.uk/style/st924502/b55672#b55672" 
+    "item_link": "https://www.next.co.uk/style/st924502/b55672#b55672"
 },
 {
     "id":5,
@@ -194,7 +194,7 @@
     "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/808306s.jpg",
     "item_link": "https://www.next.co.uk/style/su231731/808306#808306"
 },
-{ 
+{
     "id":18,
     "name": "Black Wool Blend Mock Gilet Herringbone Padded Coat",
     "category": "Coats",
@@ -375,5 +375,62 @@
     "fit": ["Regular", "Petite"],
     "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/B53071s.jpg",
     "item_link": "https://www.next.co.uk/style/ls437077/b53071#b53071"
+},
+{
+  "id":34,
+  "name": "floral midi dress Hoodie",
+  "category": "Dress",
+  "colour": "multicolored",
+  "pattern": "Laced",
+  "gender": "male",
+  "size": ["S", "R", "L", "XL"],
+  "fit": ["Regular", "Petite"],
+  "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/524585s.jpg?im=Resize,width=750",
+  "item_link": "https://www.next.co.uk/style/st417895/524585#524585"
+},
+{
+  "id": 35,
+  "name": "Black Lakers Hoodie",
+  "category": "Hoodies",
+  "colour": "Black",
+  "pattern": "Graphic",
+  "gender": "male",
+  "size": ["M", "L", "XL"],
+  "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/E12024s.jpg?im=Resize,width=750",
+  "item_link": "https://www.next.co.uk/style/su339450/e12024#e12024"
+},
+{
+  "id": 36,
+  "name": "Black Sweatpants",
+  "category": "Trousers",
+  "colour": "Black",
+  "pattern": "Solid",
+  "gender": "male",
+  "size": ["M", "L", "XL"],
+  "image_url": "https://example.com/path-to-sweatpants-image",
+  "item_link": "https://www.example.com/black-sweatpants"
+},
+{
+  "id": 37,
+  "name": "White Athletic Shoes",
+  "category": "Shoes",
+  "colour": "White",
+  "pattern": "Solid",
+  "gender": "unisex",
+  "size": ["8", "9", "10", "11"],
+  "image_url": "https://example.com/path-to-shoes-image",
+  "item_link": "https://www.example.com/white-shoes"
+},
+{
+  "id": 38,
+  "name": "Black Quarter Zip Sweater",
+  "category": "Sweaters",
+  "colour": "Black",
+  "pattern": "Solid",
+  "gender": "male",
+  "size": ["M", "L", "XL"],
+  "image_url": "https://xcdn.next.co.uk/common/items/default/default/itemimages/altitemzoom/N78176s.jpg?im=Resize,width=750",
+  "item_link": "https://www.next.co.uk/style/su263660/n78176#n78176"
 }
+
 ]

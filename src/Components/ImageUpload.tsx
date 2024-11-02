@@ -11,6 +11,7 @@ const cld = new Cloudinary({
   cloud: { cloudName: 'drjjavzx5' }
 });
 
+
 const ImageUpload: React.FC = () => {
   const [uploadedImage, setUploadedImage] = useState<CloudinaryImage | null>(null);
   const [imageURL, setImageURL] = useState<string | null>(null);
